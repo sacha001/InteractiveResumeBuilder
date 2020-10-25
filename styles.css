@@ -22,3 +22,39 @@ body {
 #game > canvas {
     box-shadow: 0px 0px 10px 5px #45A29E;
 }
+
+#canvasPlaceholder {
+    width: 960px;
+    height: 600px;
+    margin: 0 auto;
+    color: #E1E1E1 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.canvasButton {
+    border: 2px solid #66FCF1;
+    border-radius: 2px;
+    font-size: large;
+    font-weight: 400;
+    padding: 15px;
+    margin: 1px;
+    cursor: pointer;
+}
+
+.canvasLink {
+    color: #66FCF1;
+    cursor: pointer;
+}
+
+.canvasLinkWrapper {
+    padding: 5px;
+}
+
+.navbarIcon {
+    margin-top: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+}
