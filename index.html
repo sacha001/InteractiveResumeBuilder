@@ -5,7 +5,9 @@
     <link rel="stylesheet" href="styles.css">
     <title>Interactive Resume Builder</title>
     <meta charset="utf-8">
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/phaser.min.js"></script>
     <script type="module" src="js/main.js"></script>
 </head>
@@ -25,11 +27,49 @@
         </nav>
         <br/>
         <div class="container-fluid">
-            <div id="game">
-                <div id="canvasPlaceholder">
-                     <div class="canvasButton" id="startButton"><span>START</span></div>
-                     <div class="canvasLinkWrapper"><span>Current Resume: </span><span class="canvasLink">Sacha Silance</span></div>
-                </div>
+            <div id="game"></div>
+        </div>
+        <div class="container-fluid" id="canvasPlaceholder">
+            <div class="collapse show multi-collapse startBtnWrapper">
+                <div class="canvasButton collapse show multi-collapse" id="startButton"><span>START</span></div>
+                <div class="canvasLinkWrapper collapse show multi-collapse"><span>Current Resume: </span><a data-toggle="collapse" href=".multi-collapse" class="canvasLink">Sacha Silance</a></div>     
+            </div>
+            <br/>
+            <div class="collapse resumeForm multi-collapse">
+                <form>
+                    <input type="text" placeholder="Your name" />
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Education</label>
+                        <div class="form-row">
+                            <div class="col-md-8">
+                                <input type="text" placeholder="Name" />
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" placeholder="From" />
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" placeholder="To" />
+                            </div>
+                        </div>
+                        <textarea placeholder="Description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Work Experience</label>
+                        <div class="form-row">
+                            <div class="col-md-8">
+                                <input type="text" placeholder="Name" />
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" placeholder="From" />
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" placeholder="To" />
+                            </div>
+                        </div>
+                        <textarea placeholder="Description"></textarea>
+                    </div>
+                    <div id="saveButton" data-toggle="collapse" href=".multi-collapse">Save</div>
+                  </form>
             </div>
         </div>
     </div>
