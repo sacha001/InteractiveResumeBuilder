@@ -1,44 +1,56 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const app = express();
+const path = require("path");
+const fs = require("fs");
+const multer  = require('multer');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var gameRouter = require('./routes/game');
+app.use(express.static('public'));
 
-var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use(express.static('public'))
-
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+app.get('/', function (req, res) {
+    res.sendFile( __dirname + "/" + "index.html" );
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+ const upload = multer({dest: path.join(__dirname,"./tmp")});
+ app.post(
+    "/upload",
+    upload.single("file" /* name attribute of <file> element in your form */),
+    (req, res) => {
+      const tempPath = req.file.path;
+      const targetPath = path.join(__dirname, "./uploads/image.png");
+  
+      if (path.extname(req.file.originalname).toLowerCase() === ".png") {
+        fs.rename(tempPath, targetPath, err => {
+          if (err) return handleError(err, res);
+  
+          res
+            .status(200)
+            .contentType("text/plain")
+            .end("File uploaded!");
+        });
+      } else {
+        fs.unlink(tempPath, err => {
+          if (err) return handleError(err, res);
+  
+          res
+            .status(403)
+            .contentType("text/plain")
+            .end("Only .png files are allowed!");
+        });
+      }
+    }
+  );
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+const handleError = (err, res) => {
+    console.error(err)
+    res
+    .status(500)
+    .contentType("text/plain")
+    .end("Oops! Something went wrong!");
+};
 
-module.exports = app;
+var server = app.listen(3000, function () {
+   var host = server.address().address
+   var port = server.address().port
+   
+   console.log("Example app listening at http://%s:%s", host, port)
+})
