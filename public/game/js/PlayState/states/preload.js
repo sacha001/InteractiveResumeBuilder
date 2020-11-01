@@ -2,7 +2,7 @@ export function preload() {
     this.game.load.json('level:1', 'game/data/level01.json');
 
     // IMAGES
-    this.game.load.image('background', 'images/background.png');
+    this.game.load.image('background', 'images/custom-background.png');
     this.game.load.image('ground', 'images/blue_ground.png');
     this.game.load.image('grass:8x1', 'images/blue_grass_8x1.png');
     this.game.load.image('grass:6x1', 'images/blue_grass_6x1.png');
