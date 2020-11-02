@@ -1,4 +1,5 @@
 export function preload() {
+    // this.game.load.json('level:0', 'game/data/level00.json');
     this.game.load.json('level:1', 'game/data/level01.json');
 
     // IMAGES

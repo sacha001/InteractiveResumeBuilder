@@ -7,6 +7,7 @@ export function loadLevel(data) {
     data.coins.forEach(this._spawnCoin, this);
 
     this._spawnCharacter({hero: data.hero});
+    this._rightWorldBound = this.world.width - this.hero._frame.width/2;
 
     const GRAVITY = 1200;
     this.game.physics.arcade.gravity.y = GRAVITY;

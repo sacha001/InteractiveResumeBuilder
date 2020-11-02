@@ -26,5 +26,6 @@ export default class PlayState {
         this._handleInput = handleInput;
         this._handleCollisions = handleCollisions;
         this._onHeroVsCoin = onHeroVsCoin;
+        this._rightWorldBound = null;
     }
 }
