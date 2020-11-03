@@ -4,7 +4,7 @@ document.getElementById('startButton').addEventListener('click', () => {
     document.getElementById('canvasPlaceholder').style.display = 'none';
     let img = document.getElementById('image');
     let image = new Image();
-    image.src = "images/background.png";
+    image.src = "images/background-level-0.png";
     image.onload = function() {
       let canvas = document.createElement('canvas');
       canvas.width = 960;
@@ -17,7 +17,7 @@ document.getElementById('startButton').addEventListener('click', () => {
       ctx.drawImage(image, 0, 0);
       ctx.fillText(text, canvas.width/2, 90);
       let base64img = ctx.canvas.toDataURL();
-      let body = {base64img: base64img, filename: "custom-background.png"};
+      let body = {base64img: base64img, filename: "background-level-0.png"};
       postData('upload', body).then(launchGame());
     }
 });

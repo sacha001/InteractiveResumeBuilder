@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 app.post("/upload", jsonParser, (req, res) => {
     let base64Data = req.body.base64img.replace(/^data:image\/png;base64,/, "");
 
-    fs.writeFile('public/images/' + req.body.filename, base64Data, 'base64', function(err) {
+    fs.writeFile('public/images/custom/' + req.body.filename, base64Data, 'base64', function(err) {
       if (err)
         console.log(err);
     });
