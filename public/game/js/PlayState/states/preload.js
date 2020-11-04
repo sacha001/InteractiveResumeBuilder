@@ -12,6 +12,9 @@ export function preload() {
     this.game.load.image('grass:2x1', 'images/blue_grass_2x1.png');
     this.game.load.image('grass:1x1', 'images/blue_grass_1x1.png');
     this.game.load.image('step1', 'images/step1.png');
+    this.game.load.image('step2', 'images/step2.png');
+    this.game.load.image('step3', 'images/step3.png');
+
     this.game.load.image('hero', 'images/hero_stopped.png');
     this.game.load.spritesheet('coin', 'images/coin_animated.png', 22, 22);
 

@@ -10,7 +10,6 @@ export function handleCollisions() {
             }, this);
 
         }
-            // TODO switch level
     });
     this.game.physics.arcade.overlap(this.hero, this.coins, this._onHeroVsCoin, null, this);
 };

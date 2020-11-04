@@ -1,7 +1,9 @@
 {
     "platforms": [
         {"image": "ground", "x": 0, "y": 546},
-        {"image": "step1", "x": 50, "y": 546}
+        {"image": "step3", "x": 342, "y": 495},
+        {"image": "step2", "x": 323, "y": 510},
+        {"image": "step1", "x": 303, "y": 526}
     ],
     "coins": [],
     "hero": {"x": 21, "y": 525}
