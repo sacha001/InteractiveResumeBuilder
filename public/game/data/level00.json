@@ -3,5 +3,6 @@
         {"image": "ground", "x": 0, "y": 546}
     ],
     "coins": [],
+    "door": {},
     "hero": {"x": 21, "y": 525}
 }
