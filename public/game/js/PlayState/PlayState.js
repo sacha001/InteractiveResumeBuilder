@@ -8,6 +8,7 @@ import { handleInput } from "./helperFunctions/handleInput.js";
 import { handleCollisions } from "./helperFunctions/handleCollisions.js";
 import { onHeroVsCoin } from "./helperFunctions/onHeroVsCoin.js";
 import { onHeroVsDoor } from "./helperFunctions/onHeroVsDoor.js";
+import { onHeroVsBound } from "./helperFunctions/onHeroVsBound.js";
 
 import { spawnCharacter } from "./helperFunctions/spawners/spawnCharacter.js";
 import { spawnPlatform } from "./helperFunctions/spawners/spawnPlatform.js";
@@ -30,6 +31,6 @@ export default class PlayState {
         this._handleCollisions = handleCollisions;
         this._onHeroVsCoin = onHeroVsCoin;
         this._onHeroVsDoor = onHeroVsDoor;
-        this._rightWorldBound = null;
+        this._onHeroVsBound = onHeroVsBound;
     }
 }
