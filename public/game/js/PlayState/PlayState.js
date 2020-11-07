@@ -32,5 +32,6 @@ export default class PlayState {
         this._onHeroVsCoin = onHeroVsCoin;
         this._onHeroVsDoor = onHeroVsDoor;
         this._onHeroVsBound = onHeroVsBound;
+        this._heroXPos = null;
     }
 }

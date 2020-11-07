@@ -10,7 +10,7 @@ export function loadLevel(data) {
 
     this._spawnCharacter({hero: data.hero});
 
-    let bounds = [this.game.add.sprite(this.world.width - this.hero._frame.width/2, 525, null),
+    let bounds = [this.game.add.sprite(this.world.width - 1, 525, null),
                   this.game.add.sprite(0, 525, null)];
     bounds.forEach((bound) => {
         this.game.physics.enable(bound);

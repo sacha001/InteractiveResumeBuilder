@@ -4,10 +4,13 @@ export function onHeroVsBound(hero, bound) {
     this.camera.fade('#000000', 250);
     this.camera.onFadeComplete.addOnce(function () {
         let newLevel;
-        if (bound.position.x === 0)
+        if (bound.position.x === 0) {
+            this._heroXPos = this.world.width - hero._frame.width;
             newLevel = this.level - 1;
-        else
+        } else {
+            this._heroXPos = hero._frame.width;
             newLevel = this.level + 1;
+        }
 
         this.game.state.restart(true, false, {
             level: newLevel
