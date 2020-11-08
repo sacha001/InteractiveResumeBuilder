@@ -17,7 +17,7 @@ export function preload() {
 
     this.game.load.image('hero', 'images/hero_stopped.png');
     this.game.load.spritesheet('coin', 'images/coin_animated.png', 22, 22);
-    this.game.load.spritesheet('door', 'images/door.png', 42, 66);
+    this.game.load.spritesheet('door', 'images/door.png', 69, 133);
 
     // AUDIO
     this.game.load.audio('sfx:jump', 'audio/jump.wav');
