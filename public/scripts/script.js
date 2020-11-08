@@ -2,25 +2,50 @@ import launchGame from "../game/js/launchGame.js";
 
 document.getElementById('startButton').addEventListener('click', () => {
     document.getElementById('canvasPlaceholder').style.display = 'none';
-    let img = document.getElementById('image');
-    let image = new Image();
-    image.src = "images/background-level-0.png";
-    image.onload = function() {
-      let canvas = document.createElement('canvas');
-      canvas.width = 960;
-      canvas.height = 600;
-      let ctx = canvas.getContext('2d');
-      ctx.textAlign = 'center';
-      ctx.font = '50px "Press Start 2P"';
-
-      let text = "SACHA SILANCE";
-      ctx.drawImage(image, 0, 0);
-      ctx.fillText(text, canvas.width/2, 90);
-      let base64img = ctx.canvas.toDataURL();
-      let body = {base64img: base64img, filename: "background-level-0.png"};
-      postData('upload', body).then(launchGame());
-    }
+    genLvl1Backround();
+    genLvl2Backround();
 });
+
+function genLvl1Backround() {
+  let image = new Image();
+  image.src = "images/background-level-0.png";
+  image.onload = function() {
+    let canvas = document.createElement('canvas');
+    canvas.width = 960;
+    canvas.height = 600;
+    let ctx = canvas.getContext('2d');
+    ctx.textAlign = 'center';
+    ctx.font = '50px "Press Start 2P"';
+
+    let text = "SACHA SILANCE";
+    ctx.drawImage(image, 0, 0);
+    ctx.fillText(text, canvas.width/2, 90);
+    let base64img = ctx.canvas.toDataURL();
+    let body = {base64img: base64img, filename: "background-level-0.png"};
+    postData('upload', body).then(launchGame());
+  }
+}
+
+function genLvl2Backround() {
+  let image = new Image();
+  image.src = "images/background-level-1.png";
+  image.onload = function() {
+    let canvas = document.createElement('canvas');
+    canvas.width = 960;
+    canvas.height = 600;
+    let ctx = canvas.getContext('2d');
+    ctx.textAlign = 'center';
+    ctx.fillStyle= '#FFFFFF';
+    ctx.font = '20px "Press Start 2P"';
+
+    let text = "UNB";
+    ctx.drawImage(image, 0, 0);
+    ctx.fillText(text, canvas.width/2, 225);
+    let base64img = ctx.canvas.toDataURL();
+    let body = {base64img: base64img, filename: "background-level-1.png"};
+    postData('upload', body);
+  }
+}
 
 async function postData(url = '', data = {}) {
   // Default options are marked with *
