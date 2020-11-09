@@ -7,6 +7,9 @@ export default class Hero extends Phaser.Sprite {
         this.anchor.set(0.5, 0.5);
         this.game.physics.enable(this);
         this.body.collideWorldBounds = true;
+
+        this.educationText = ['University of New Bruncwick', 'Bachelor of Computer Science', '3.8 GPA'];
+        this.initialEducationLen = this.educationText.length;
     }
 
     move(direction) {

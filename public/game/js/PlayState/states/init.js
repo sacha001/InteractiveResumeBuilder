@@ -1,4 +1,4 @@
-const LEVEL_COUNT = 2;
+const LEVEL_COUNT = 3;
 
 export function init(data) {
     this.keys = this.game.input.keyboard.addKeys({
@@ -8,4 +8,5 @@ export function init(data) {
     });
     this.game.renderer.renderSession.roundPixels = true;
     this.level = (data.level || 0) % LEVEL_COUNT;
+    this.itemPickupCount = 0;
 };

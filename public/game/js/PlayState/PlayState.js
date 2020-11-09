@@ -6,13 +6,15 @@ import { update } from "./states/update.js";
 import { loadLevel } from "./helperFunctions/loadLevel.js";
 import { handleInput } from "./helperFunctions/handleInput.js";
 import { handleCollisions } from "./helperFunctions/handleCollisions.js";
-import { onHeroVsCoin } from "./helperFunctions/onHeroVsCoin.js";
+import { onHeroVsItem } from "./helperFunctions/onHeroVsItem.js";
 import { onHeroVsDoor } from "./helperFunctions/onHeroVsDoor.js";
 import { onHeroVsBound } from "./helperFunctions/onHeroVsBound.js";
+import { goToNextLevel } from "./helperFunctions/goToNextLevel.js";
+import { addText } from "./helperFunctions/addText.js";
 
 import { spawnCharacter } from "./helperFunctions/spawners/spawnCharacter.js";
 import { spawnPlatform } from "./helperFunctions/spawners/spawnPlatform.js";
-import { spawnCoin } from "./helperFunctions/spawners/spawnCoin.js";
+import { spawnItem } from "./helperFunctions/spawners/spawnItem.js";
 import { spawnDoor } from "./helperFunctions/spawners/spawnDoor.js";
 
 export default class PlayState {
@@ -23,15 +25,19 @@ export default class PlayState {
         this.update = update;
 
         this._loadLevel = loadLevel;
-        this._spawnCharacter = spawnCharacter;
-        this._spawnPlatform = spawnPlatform;
-        this._spawnCoin = spawnCoin;
-        this._spawnDoor = spawnDoor;
         this._handleInput = handleInput;
         this._handleCollisions = handleCollisions;
-        this._onHeroVsCoin = onHeroVsCoin;
+        this._onHeroVsItem = onHeroVsItem;
         this._onHeroVsDoor = onHeroVsDoor;
         this._onHeroVsBound = onHeroVsBound;
+        this._goToNextLevel = goToNextLevel;
+        this._addText = addText;
+
+        this._spawnCharacter = spawnCharacter;
+        this._spawnPlatform = spawnPlatform;
+        this._spawnItem = spawnItem;
+        this._spawnDoor = spawnDoor;
+
         this._heroXPos = null;
     }
 }

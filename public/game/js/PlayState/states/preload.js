@@ -1,6 +1,7 @@
 export function preload() {
     this.game.load.json('level:0', 'game/data/level00.json');
     this.game.load.json('level:1', 'game/data/level01.json');
+    this.game.load.json('level:2', 'game/data/level02.json');
 
     // IMAGES
     this.game.load.image('background-level-0', 'images/custom/background-level-0.png');
@@ -16,8 +17,13 @@ export function preload() {
     this.game.load.image('step3', 'images/step3.png');
 
     this.game.load.image('hero', 'images/hero_stopped.png');
-    this.game.load.spritesheet('coin', 'images/coin_animated.png', 22, 22);
+    this.game.load.spritesheet('book', 'images/book.png', 36, 36);
     this.game.load.spritesheet('door', 'images/door.png', 69, 133);
+
+    this.game.load.spritesheet('icon:key', 'images/key_icon.png', 34, 30);
+    this.game.load.image('icon:coin', 'images/coin_icon.png');
+    this.game.load.image('font:boxy_bold', 'images/boxy_bold.png');
+
 
     // AUDIO
     this.game.load.audio('sfx:jump', 'audio/jump.wav');

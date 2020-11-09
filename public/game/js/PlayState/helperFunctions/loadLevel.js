@@ -1,14 +1,19 @@
 
 export function loadLevel(data) {
     this.platforms = this.game.add.group();
-    this.coins = this.game.add.group();
+    this.books = this.game.add.group();
     this.bgDecoration = this.game.add.group();
     this.worldBounds = this.game.add.group();
 
-    data.platforms.forEach(this._spawnPlatform, this);
-    data.coins.forEach(this._spawnCoin, this);
+    data.platforms.forEach(this._spawnPlatform, this);    
 
-    this._spawnCharacter({hero: data.hero});
+    let hero = this._spawnCharacter({hero: data.hero});
+    
+    for (let i = 0; i < hero.initialEducationLen && data.books; i++) {
+        let randomIndex = Math.floor(Math.random() * data.books.length);
+        let book = data.books.splice(randomIndex, 1)[0];
+        this._spawnItem(book);
+    }
 
     let bounds = [this.game.add.sprite(this.world.width - 1, 525, null),
                   this.game.add.sprite(0, 525, null)];
