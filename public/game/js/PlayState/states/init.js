@@ -6,6 +6,14 @@ export function init(data) {
         right: Phaser.KeyCode.RIGHT,
         up: Phaser.KeyCode.UP
     });
+
+    this.keys.up.onDown.add(function () {
+        let didJump = this.hero.jump();
+        if (didJump) {
+            this.sfx.jump.play();
+        }
+    }, this);
+    
     this.game.renderer.renderSession.roundPixels = true;
     this.level = (data.level || 0) % LEVEL_COUNT;
     this.itemPickupCount = 0;
