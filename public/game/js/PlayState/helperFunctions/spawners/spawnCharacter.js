@@ -1,4 +1,4 @@
-import Hero from "../../../Hero.js";
+import Hero from "../../objects/Hero.js";
 
 export function spawnCharacter(data) {
     // spawn hero

@@ -26,6 +26,6 @@ export function preload() {
 
 
     // AUDIO
-    this.game.load.audio('sfx:jump', 'audio/jump.wav');
-    this.game.load.audio('sfx:coin', 'audio/coin.wav');
+    // this.game.load.audio('sfx:jump', 'audio/jump.wav');
+    // this.game.load.audio('sfx:coin', 'audio/coin.wav');
 };

@@ -7,6 +7,7 @@
 - Use pop-up screens to display resume contents
 - Make resume contents be accessible in treasures or some sort of container when the player completes a challenge.
   Alternatively, we could make the sections of the resume be pieces of a document that are collected at the end of a challenge and the player gets to read the entire thing in the end. Maybe even add a riddle to unlock the end of the game.
+- The perspective of the person playing the game will be that of an interviewer, therefore, the game should provide info about the character instead of making the person playing the game feel as if the character is him/her. In other words, make the person playing feel as if he/she is helping the character pass the challenges.
 
 ## Challenges (Resume Sections)
 
